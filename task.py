@@ -1,66 +1,55 @@
 # вводим марку и модель телефонов
-list_phone = (input('Введите марку и модель телефона: ').split(", "))
+list_phone = input('Введите марку и модель телефона: ').split(", ")
 
-# Создаем пустые списки для iPhone и Samsung
-iPhone = []
-Samsung = []
+# Создаем пустые списки для iphones и samsungs
+iphones = []
+samsungs = []
 
-# Сортируем Samsung и iPhone в разные списки
-for ph in list_phone:
-    if ph[0].islower() == True:
-        ph,model = ph.split(" ")
-        iPhone.append((ph,int(model)))
+# Сортируем samsungs и iphones в разные списки
+for phone_model in list_phone:
+    phone, model = phone.split(" ")
+    if phone.lower() == 'iphone':
+        iphones.append((phone, int(model)))
+    elif phone.lower() == 'samsung':
+        samsungs.append((phone, int(model)))
     else:
-        ph,model = ph.split(" ")
-        Samsung.append((ph,int(model)))
+        print(f"{phone_model} not an iphone nor samsung")
 
-# Выводим список iPhone и Samsung
-print('all iPhones - ',iPhone) 
-print('all Sumsungs - ',Samsung)
-
-# Спрашиваем у пользователя хочет ли он узнать каких телефонов больше
-print('Хотите узнать каких телефонов больше?')
-yes_or_not = input('')
+# Выводим список iphones и samsungs
+print(f'all iPhones - {iphones}') 
+print(f'all Sumsungs - {samsungs}')
 
 # Сравниваем каких телефонов больше
-if yes_or_not == 'да' or yes_or_not == 'Да':
-    if len(iPhone) > len(Samsung):
+yes_or_not = input('Хотите узнать каких телефонов больше?\n> ')
+
+if yes_or_not.lower() == 'да':
+    if len(iphones) > len(samsungs):
         print('iPhones more than Samsungs')
-    elif len(iPhone) < len(Samsung):
+    elif len(iphones) < len(samsungs):
         print('Samsungs more than iPhones')
     else:
         print('Одинаковое колличество')
-elif yes_or_not == 'нет' or yes_or_not == 'Нет':
-    ...
 
-# Сравниваем модели iPhone
-print('Хотите узнать самую новую модель iPhone?')
-yes_or_not = input('')
+# Сравниваем модели iphones
+yes_or_not = input('Хотите узнать самую новую модель iphones?\n> ')
 
-new_models_iphone = []
-
-if yes_or_not == 'да' or yes_or_not == 'Да':
-    for element in iPhone:
+if yes_or_not.lower() == 'да':
+    new_models_iphone = []
+    for element in iphones:
         a = element[1]
         new_models_iphone.append(a)
         b = max(new_models_iphone)
     if b == a:
         print(element)
-else:
-    ...
 
-# Сравниваем модели Samsung
-print('Хотите узнать самую новую модель Samsung?')
-yes_or_not = input('')
+# Сравниваем модели samsungs
+yes_or_not = input('Хотите узнать самую новую модель Samsung?\n>')
 
-new_models_samsung = []
-
-if yes_or_not == 'да' or yes_or_not == 'Да':
-    for element in Samsung:
+if yes_or_not.lower() == 'да':
+    new_models_samsung = []
+    for element in samsungs:
         c = element[1]
         new_models_samsung.append(c)
         v = max(new_models_samsung)
     if v == c:
         print(element)
-else:
-    ...
