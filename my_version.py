@@ -2,9 +2,9 @@
 phones = input('Input phones: ').split(', ')
 
 # sort to iphones and samsungs lists
-iphones = [(phone.split(" ")[0], int(phone.split(" ")[1]))
+iphones = [(phone.split()[0], int(phone.split()[1]))
            for phone in phones if phone.lower().startswith('iphone')]
-samsungs = [(phone.split(" ")[0], int(phone.split(" ")[1]))
+samsungs = [(phone.split()[0], int(phone.split()[1]))
             for phone in phones if phone.lower().startswith('samsung')]
 
 # which phones more
