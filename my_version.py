@@ -18,3 +18,24 @@ else:
 # last models of iphone and samsung
 print(f"Iphone last model: {max([model for _, model in iphones])}")
 print(f"Samsung last model: {max([model for _, model in samsungs])}")
+
+[
+    i
+    for i in range(10)
+    if i > 10
+]
+
+[
+    (phone.split()[0], int(phone.split()[1]))
+    for phone in phones
+    if phone.lower().startswith('iphone')
+]
+
+
+for phone in phones:
+    if phone.lower().startswith('iphone'):
+        (phone.split()[0], int(phone.split()[1]))
+
+phones = {}
+phones.update({'iphones': ["Ruslan"]})
+phones.update
