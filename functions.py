@@ -10,7 +10,7 @@ def summa(a: Optional[int], b: int) -> Union[int, str]:
 a = 5
 b = 10
 
-c = summa(range(10), b)
+c = summa(10, b)
 print(c)
 c = summa(4, summa(a, b))
 print(c)
